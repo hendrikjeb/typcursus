@@ -1,6 +1,7 @@
 import random
 from menu import mk_menu
 from menu import hoofdmenu
+from menu import titelbox
 from toetsenbord import maak_toetsenbord
 import time
 
@@ -129,5 +130,12 @@ def typcursus(doorgaan=True, pogingen_t=3):
 				k = hoofdmenu[keuze - 1][1]
 				mk_oefeningen(keuze, *k)
 				break
+
+titelbox("LEER TYPEN MET 10 VINGERS...", "Het doel van deze cursus is om met tien vingers te leren typen.",
+	"Leer stukje voor stukje de rijen van je toetsenbord kennen.",
+	"Leg je wijsvingers op de F en de J en typ de rij met letters na.",
+	"Kies daarvoor eerst een rij waarmee je wil beginnen, bijvoorbeeld 1.", "",
+	"TIP: Als je een foutje maakt: druk dan op ENTER en niet op BACKSPACE,",
+	"dan kan je namelijk nogmaals dezelfde oefening doen.")
 
 typcursus()
