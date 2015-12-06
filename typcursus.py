@@ -21,21 +21,20 @@ def maak_oef(letters, eerste_keer=True):
 		elif random.randint(1,100) < (25 * (z - 1)):
 			vraag += ' '
 			z = 0
-		#kies een letter uit de gegeven letters
+		# kies een letter uit de gegeven letters
 		else:
 			y = random.randint(0, len(letters) - 1)
 			vraag += letters[y]
 			z += 1
 
-	#zorg dat bij de eerste poging de letterrij wordt getoond 
-	#waar de vraag op van toepassing is, 
-	#bij latere pogingen gebeurt dit niet.
-	#Met - kunnen de vragen evt. geskipt worden bij het testen.
+	# zorg dat bij de eerste poging de letterrij wordt getoond waar de vraag 
+	# op van toepassing is, bij latere pogingen gebeurt dit niet.
 	if eerste_keer:
 		print ''
 		maak_toetsenbord(letters)
 	print ''
 
+	# Met - kunnen de vragen evt. geskipt worden t.b.v. het testen.
 	antw = raw_input(vraag + '\n')
 	if antw != vraag:
 		if antw != '-':
@@ -67,15 +66,18 @@ def mk_oefeningen(num, *rijen):
 		vraag_ok()
 
 def vraag_doorgaan(num):
-	print 'Wil je doorgaan met les %d of naar het [m]enu?' % (num + 1)
-	print "'d' = doorgaan, 'm' = menu"
+	print '\nWil je doorgaan met les %d, terug naar het menu of stoppen?' % (num + 1)
+	print "'d' = doorgaan, 'm' = menu, 's' = stoppen"
 	x = None
-	while x not in ['m', 'd']:
+	while x not in ['m', 'd', 's']:
 		x = raw_input('> ').lower()
 		if x == 'd':
 			mk_oefeningen(num + 1, *hoofdmenu[num][1])
 		elif x == 'm':
 			typcursus()
+		elif x == 's':
+			print 'Het programma wordt afgesloten.'
+			exit(0)
 
 def vraag_ok(prompt='Wil je doorgaan? (j/n)\n', pogingen=5):
 	for p in xrange(pogingen):
@@ -113,7 +115,7 @@ def typcursus(doorgaan=True, pogingen_t=3):
 		prompt = 'Oefening: '
 		while p >= 0:
 			keuze = maak_een_keuze(prompt)
-			if not isinstance(keuze, int):
+			if not isinstance(keuze, int) or keuze < 1 or keuze > 6:
 				p -= 1
 				if p == 0:
 					if vraag_ok() == True:
@@ -131,7 +133,8 @@ def typcursus(doorgaan=True, pogingen_t=3):
 				mk_oefeningen(keuze, *k)
 				break
 
-titelbox("LEER TYPEN MET 10 VINGERS...", "Het doel van deze cursus is om met tien vingers te leren typen.",
+titelbox("LEER TYPEN MET 10 VINGERS...", 
+	"Het doel van deze cursus is om met tien vingers te leren typen.",
 	"Leer stukje voor stukje de rijen van je toetsenbord kennen.",
 	"Leg je wijsvingers op de F en de J en typ de rij met letters na.",
 	"Kies daarvoor eerst een rij waarmee je wil beginnen, bijvoorbeeld 1.", "",
