@@ -27,7 +27,9 @@ def maak_oef(letters, eerste_keer=True):
 			z += 1
 
 	#zorg dat bij de eerste poging de letterrij wordt getoond 
-	#waar de vraag op van toepassing is, bij latere pogingen gebeurt dit niet.
+	#waar de vraag op van toepassing is, 
+	#bij latere pogingen gebeurt dit niet.
+	#Met - kunnen de vragen evt. geskipt worden bij het testen.
 	if eerste_keer:
 		print ''
 		maak_toetsenbord(letters)
@@ -35,7 +37,7 @@ def maak_oef(letters, eerste_keer=True):
 
 	antw = raw_input(vraag + '\n')
 	if antw != vraag:
-		if antw != '':
+		if antw != '-':
 			maak_oef(letters, eerste_keer=False)
 
 def mk_oefeningen(num, *rijen):

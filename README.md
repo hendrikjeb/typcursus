@@ -1,31 +1,25 @@
-# typcursus
+# Typcursus
 
-TODO: Write a project description
+Met deze typcursus zou iemand zichzelf kunnen leren typen. Allereerst wordt een menu aangeboden. Hier kan een gebruiker kiezen welke rij(en) van het toetsenbord hij/zij wil oefenen. Vervolgens wordt voor die rij steeds een willekeurige letterreeks aangeboden die de cursist met tien letters na moet typen.
 
-## Installation
+## Gebruik
 
-TODO: Describe the installation process
+Om de typcursus te starten moet Python zijn geïnstalleerd. Zet vervolgens onderstaande bestanden op één locatie:
 
-## Usage
+- typcursus.py
+- menu.py
+- toetsenbord.py
 
-TODO: Write usage instructions
+Open vervolgens het bestand 'typcursus.py' met Python om de cursus te starten.
 
-## Contributing
+## Testen
 
-1. Fork it!
-2. Create your feature branch: `git checkout -b my-new-feature`
-3. Commit your changes: `git commit -am 'Add some feature'`
-4. Push to the branch: `git push origin my-new-feature`
-5. Submit a pull request :D
+Ten behoeve van het testen, kunnen vragen eventueel beantwoord worden met **-**.
 
-## History
+## Geschiedenis
 
-TODO: Write history
+De initiële typcursus is gemaakt door Hendrikje Balkenende in april 2015.
 
-## Credits
+## Licentie
 
-TODO: Write credits
-
-## License
-
-TODO: Write license
+De licentie bij dit project is 'The MIT License (MIT)' zie ook het bestand 'LICENSE'.
